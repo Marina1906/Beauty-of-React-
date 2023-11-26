@@ -6,12 +6,11 @@ import CoreConcept from './Components/CoreConcepts.jsx';
 import TabButton from './Components/Tab.Button.jsx';
 
 function App () {
-  useState();
+  const [selectedTopic, setSelectedTopic] = useState('Please click a button');
 
   function handleSelect (selectedButton) {
-    console.log (selectedButton);
-    tabContent = selectedButton;
-    console.log (tabContent);
+    setSelectedTopic(selectedButton);
+    console.log (selectedTopic);
   }
 
   console.log ('APP COMPONENT EXECUTING');
@@ -56,7 +55,7 @@ function App () {
             <TabButton onSelect={() => handleSelect ('props')}>Props</TabButton>
             <TabButton onSelect={() => handleSelect ('state')}>State</TabButton>
           </menu>
-          {tabContent}
+          {selectedTopic}
         </section>
       </main>
     </div>
